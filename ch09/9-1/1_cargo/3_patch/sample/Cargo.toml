@@ -1,0 +1,10 @@
+[package]
+name = "sample"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+uuid = "1.16.0"
+
+#[patch.crates-io]
+#uuid = {path = "../uuid"}

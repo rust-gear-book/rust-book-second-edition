@@ -1,0 +1,8 @@
+[workspace]
+resolver = "3"
+
+members = [
+    "samplecli-env",
+    "samplecli-builder",
+    "samplecli-derivemacro",
+]

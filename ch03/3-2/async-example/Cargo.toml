@@ -1,0 +1,10 @@
+[package]
+name = "async-example"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "1.45.0", features = ["full"] }
+smol = "2.0.2"
+smol-macros = "0.1.1"
+async-trait = "0.1.88"

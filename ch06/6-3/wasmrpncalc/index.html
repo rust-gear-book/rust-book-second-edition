@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RPN Calculator</title>
+</head>
+<body>
+    <h1>RPN Calculator</h1>
+    <input type="text" id="formula" placeholder="Enter a formula">
+    <button id="calculate">Calculate</button>
+    <p id="result"></p>
+
+    <script type="module">
+    import init, { WasmRpnCalculator } from './pkg/wasmrpncalc.js';
+    
+    async function main() {
+        await init();
+        const calc = new WasmRpnCalculator(false);
+        document.getElementById('calculate').addEventListener('click', () => {
+            const formula = document.getElementById('formula').value;
+            let result = '';
+            try {
+                result = calc.eval(formula);
+            } catch (e) {
+                result = 'Error: ' + e;
+            }
+            document.getElementById('result').textContent = result;
+        });
+    }
+    main();
+    </script>
+</body>
+</html>
